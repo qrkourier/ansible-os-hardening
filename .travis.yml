@@ -66,8 +66,8 @@ script:
 #    && (echo 'Idempotence test: pass' && exit 0)
 #    || (echo 'Idempotence test: fail' && exit 1)
 
-   run tests
-   - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm bundle exec inspec exec /etc/ansible/roles/os-hardening/test/integration/default/inspec/
+    # run tests
+  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm bundle exec inspec exec /etc/ansible/roles/os-hardening/test/integration/default/inspec/
 
   # Clean up
   - sudo docker stop "$(cat ${container_id})"
